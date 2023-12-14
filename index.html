@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Patrix, Bootstrap 5 Landing Page</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      /* The actual timeline (the vertical ruler) */
+  .main-timeline {
+    position: relative;
+   
+  }
+  .card{
+    border-radius: 10px;
+    background:rgb(11, 1, 11);
+    color: #fff;
+  }
+  /* The actual timeline (the vertical ruler) */
+  .main-timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: #939597;
+    box-shadow: 5px 5px 12px #aaa;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .timeline {
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -13px;
+    background-color: #939597;
+    border: 5px solid #f5df4d;
+    top: 15px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 12px #aaa;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    padding: 0px 40px 20px 0px;
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    padding: 0px 0px 20px 40px;
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+  
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -12px;
+    background-color: rgb(193, 21, 196);
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .main-timeline::after {
+      left: 31px;
+    }
+  
+    /* Full-width containers */
+    .timeline {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    
+    }
+  
+    /* Make sure that all arrows are pointing leftwards */
+    .timeline::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+      
+    }
+  
+    /* Make sure all circles are at the same spot */
+    .left::after,
+    .right::after {
+      left: 18px;
+    }
+  
+    .left::before {
+      right: auto;
+    }
+  
+    /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
+    </style>
+  
+</head>
+<body>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////
+                               START SECTION 1 - THE NAVBAR SECTION  
+/////////////////////////////////////////////////////////////////////////////////////////////-->
+<nav class="navbar navbar-expand-lg navbar-dark menu shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="">
+       NBRCODINADDA
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">contact</a>
+          </li>
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                            START SECTION 2 - THE INTRO SECTION  
+/////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<section id="home" class="intro-section">
+  <div class="container">
+    <div class="row align-items-center text-white">
+      <!-- START THE CONTENT FOR THE INTRO  -->
+      <div class="col-md-6 intros text-start">
+        <h1 class="display-2">
+          <span class="display-2--intro"> Nilesh Yadav</span>
+          <span class="display-2--description lh-base">
+            Founder of NBRCODINGADDA<br>
+           Web Designer ,Data analyst, front-end developer
+          </span>
+        </h1>
+        <button type="button"class="rounded-pill btn-rounded">Get in Touch
+          <span><i class="fas fa-arrow-right"></i></span>
+        </button>
+      </div>
+      <!-- START THE CONTENT FOR THE VIDEO -->
+      <div class="col-md-6 intros text-end">
+        <div>
+          <img src="images/arts/intro-section-illustration.png" alt="video illutration" class="img-fluid">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,208C384,192,480,128,576,133.3C672,139,768,213,864,202.7C960,192,1056,96,1152,74.7C1248,53,1344,107,1392,133.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+</section>
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////
+                             START SECTION 3 - THE CAMPANIES SECTION  
+////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+ 
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////
+                         START SECTION 4 - THE SERVICES  
+///////////////////////////////////////////////////////////////////////////////////////////////////-->
+<section id="services" class="services">
+  <div class="container">
+    <div class="row text-center">
+      <h1 class="display-3 fw-bold">Our Services</h1>
+      <div class="heading-line mb-1"></div>
+    </div>
+  <!-- START THE DESCRIPTION CONTENT  -->
+    <div class="row pt-2 pb-2 mt-0 mb-3">
+      <div class="col-md-6 border-right">
+        <div class="bg-white p-3">
+          <h2 class="fw-bold text-capitalize text-center">
+            Our Services Range From Initial Design To Deployment Anywhere Anytime
+          </h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="bg-white p-4 text-start">
+          <p class="fw-light">
+          We provide many services in the feild of IT industry.We have great contribution towards these feilds. We make video on the some social media platform like Youtube , facebook , instagram and many more. 
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START THE CONTENT FOR THE SERVICES  -->
+  <div class="container">
+    <!-- START THE MARKETING CONTENT  -->
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
+        <div class="services__content">
+          <div class="icon d-block fas fa-paper-plane"></div>
+          <h3 class="display-3--title mt-1">Web Hosting</h3>
+          <p class="lh-lg">
+            A web hosting service is a type of Internet hosting service that hosts websites for clients, i.e. it offers the facilities required for them to create and maintain a site and makes it accessible on the World Wide Web. Companies providing web hosting services are sometimes called web hosts
+          </p>
+          <button type="button" class="rounded-pill btn-rounded border-primary">Learn more
+            <span><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
+        <div class="services__pic">
+          <img src="images/services/service-1.png" alt="marketing illustration" class="img-fluid">
+        </div>
+      </div>
+    </div><hr>
+    <!-- START THE WEB DEVELOPMENT CONTENT  -->
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-start">
+        <div class="services__pic">
+          <img src="images/services/service-2.png" alt="web development illustration" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
+        <div class="services__content">
+          <div class="icon d-block fas fa-code"></div>
+          <h3 class="display-3--title mt-1">web development</h3>
+          <p class="lh-lg">
+            Web development is the work involved in developing a website for the Internet or an intranet. Web development can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services.
+          </p>
+          <button type="button" class="rounded-pill btn-rounded border-primary">Learn more
+            <span><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+    </div><hr>
+    <!-- START THE CLOUD HOSTING CONTENT  -->
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4">
+        <div class="services__content">
+          <div class="icon d-block fas fa-cloud-upload-alt"></div>
+          <h3 class="display-3--title mt-1">Front-end & Backend Development</h3>
+          <p class="lh-lg">
+            Front-end development focuses on the visual aspects of a website — the part that users see and interact with. Back-end development comprises a site's structure, system, data, and logic. Together, front-end and back-end development combine to create interactive, visually pleasing websites.
+          </p>
+          <button type="button" class="rounded-pill btn-rounded border-primary">Learn more
+            <span><i class="fas fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 services mt-4 text-end">
+        <div class="services__pic">
+          <img src="images/services/service-3.png" alt="cloud hosting illustration" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////
+                               START SECTION 5 - THE TESTIMONIALS  
+/////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<section id="testimonials" class="testimonials">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+  <div class="container">
+    <div class="row text-center text-white">
+      <h1 class="display-3 fw-bold">About Teams </h1>
+      <hr style="width: 100px; height: 3px; " class="mx-auto">
+      <p class="lead pt-1">  Our teams member </p>
+    </div>
+
+    <!-- START THE CAROUSEL CONTENT  -->
+    <div class="row align-items-center">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- CAROUSEL ITEM 1 -->
+          <div class="carousel-item active">
+            <!-- testimonials card  -->
+            <div class="testimonials__card">
+              <p class="lh-lg">
+                <i class="fas fa-quote-left"></i>
+                
+                My name is Nilesh Yadav. I was born & brought up in gorakhpur,Uttarpradesh . But now I am in mumbai for further studies
+                now i am completing my BCA last year from tilak maharashtra vidyapeeth pune,
+         I completed my hsc from thakur college of sciencve and commerce in mumbai .
+                My technical skills are in MS Office, MS Word, MS Excel,html,python ,sql,powerbi, MSpoweroint etc 
+                
+                <i class="fas fa-quote-right"></i>
+                <div class="ratings p-1">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </p>
+            </div>
+            <!-- client picture  -->
+            <div class="testimonials__picture">
+              <img src="images/testimonials/IMG_20220330_133201.jpg" alt="client-1 picture" class="rounded-circle img-fluid">
+            </div>
+            <!-- client name & role  -->
+            <div class="testimonials__name">
+              <h3>Nilesh Yadav</h3>
+              <p class="fw-light">CEO & founder</p>
+            </div>
+          </div>     
+          <!-- CAROUSEL ITEM 2 -->
+          <div class="carousel-item">
+            <!-- testimonials card  -->
+            <div class="testimonials__card">
+              <p class="lh-lg">
+                <i class="fas fa-quote-left"></i>
+                My name isRohit Nishad . I was born & brought up in Kanpur, Uttarpradesh . But now I am in mumbai for further studies
+                now i am completing my BCA last year from tilak maharashtra vidyapeeth pune,
+         I completed my ssc & hsc from mumbai .
+         My technical skills are in java , python , html ,css ,js,php, sql,c,c++ etc 
+                
+                <i class="fas fa-quote-right"></i>
+                <div class="ratings p-1">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </p>
+            </div>
+            <!-- client picture  -->
+            <div class="testimonials__picture">
+              <img src="images/testimonials/rohit.jpg"alt="client-2 picture" class="rounded-circle img-fluid">
+            </div>
+            <!-- client name & role  -->
+            <div class="testimonials__name">
+              <h3>Rohit Nishad</h3>
+              <p class="fw-light">Co-founder</p>
+            </div>
+          </div>     
+         
+        
+        
+        </div>
+        <div class="text-center">
+          <button class="btn btn-outline-light fas fa-long-arrow-alt-left" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        </button>
+        <button class="btn btn-outline-light fas fa-long-arrow-alt-right" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+</section>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////
+                       START SECTION 6 - THE FAQ 
+//////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<section id="faq"style="background-color: transparent;">
+  <div class="container py-5">
+    <h1 class="display-3 fw-bold text-center">Skills</h1><br>
+    <div class="main-timeline">
+      <div class="timeline left">
+        <div class="card">
+          <div class="card-body p-4 shadow">
+            <h3>HTML,CSS ,JS  </h3><hr>
+            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 95%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="timeline right">
+        <div class="card">
+          <div class="card-body p-4 shadow">
+            <h3>PYTHON</h3><hr>
+            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="timeline left">
+        <div class="card">
+          <div class="card-body p-4 shadow">
+            <h3>SQL</h3><hr>
+            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 95%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="timeline right">
+        <div class="card">
+          <div class="card-body p-4 shadow">
+            <h3>JAVA</h3><hr>
+          <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 60%"></div>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="timeline left">
+        <div class="card">
+          <div class="card-body p-4 shadow">
+            <h3>C++</h3><hr>
+          <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 55%"></div>
+</div>
+          </div>
+        </div>
+      </div>
+      <div class="timeline right">
+        <div class="card">
+          <div class="card-body p-4 shadow">
+            <h3>PHP</h3><hr>
+            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 65%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////
+                              START SECTION 7 - THE PORTFOLIO  
+//////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="row text-center mt-5">
+      <h1 class="display-3 fw-bold text-capitalize">Latest work</h1>
+      <div class="heading-line"></div>
+      <p class="lead">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint porro temporibus distinctio.
+      </p>
+    </div>
+    <!-- FILTER BUTTONS  -->
+    <div class="row mt-5 mb-4 g-3 text-center">
+      <div class="col-md-12">
+        <button class="btn btn-outline-primary" type="button">All</button>
+        <button class="btn btn-outline-primary" type="button">websites</button>
+        <button class="btn btn-outline-primary" type="button">design</button>
+        <button class="btn btn-outline-primary" type="button">mockup</button>
+      </div>
+    </div>
+
+    <!-- START THE PORTFOLIO ITEMS  -->
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="portfolio-box shadow">
+          <img src="images/portfolio/1.jpg" alt="portfolio 1 image" title="portfolio 1 picture" class="img-fluid">
+          <div class="portfolio-info">
+            <div class="caption">
+              <h4>Profile Card</h4>
+              <p>                        A profile card is a card that carries saved profile content. Profile Cards let you select profile values consistently over all items on your website.                    </p>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="portfolio-box shadow">
+          <img src="images/portfolio/2.jpg" alt="portfolio 2 image" title="portfolio 2 picture" class="img-fluid">
+          <div class="portfolio-info">
+            <div class="caption">
+              <h4>Neumorhism Keyboard</h4>
+              <p>                        The user interface (UI) is the point of human-computer interaction and communication in a device.keyboard.                   </p>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="portfolio-box shadow">
+          <img src="images/portfolio/3.jpg" alt="portfolio 3 image" title="portfolio 3 picture" class="img-fluid">
+          <div class="portfolio-info">
+            <div class="caption">
+              <h4>Music Player</h4>
+              <p>The primary purpose of the music streaming application is to play music available in the databases of the service, compose custom playlists and suggest similar songs                    </p>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="portfolio-box shadow">
+          <img src="images/portfolio/4.jpg" alt="portfolio 4 image" title="portfolio 4 picture" class="img-fluid">
+          <div class="portfolio-info">
+            <div class="caption">
+              <h4>Chess</h4>
+              <p>                        Chess is a board game for two players, called White and Black, each controlling an army of chess pieces, with the objective to checkmate the opponent's king                    </p>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="portfolio-box shadow">
+          <img src="images/portfolio/5.jpg" alt="portfolio 5 image" title="portfolio 5 picture" class="img-fluid">
+          <div class="portfolio-info">
+            <div class="caption">
+              <h4>Website</h4>
+              <p>                        A website is a collection of web pages and related content that is identified by a common domain name and published on at least one web server.                    </p>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="portfolio-box shadow">
+          <img src="images/portfolio/6.jpg" alt="portfolio 6 image" title="portfolio 6 picture" class="img-fluid">
+          <div class="portfolio-info">
+            <div class="caption">
+              <h4>Digital Clock</h4>
+              <p>                        A digital clock displays the time digitally, as opposed to an analogue clock. Digital clocks are often associated with electronic drives, but the "digital" description refers only to the display, not to the drive mechanism.                    </p>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="portfolio-box shadow">
+          <img src="images/portfolio/7.jpg" alt="portfolio 7 image" title="portfolio 7 picture" class="img-fluid">
+          <div class="portfolio-info">
+            <div class="caption">
+              <h4>Login Page </h4>
+              <p>It provide very decent look for login to your account</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="portfolio-box shadow">
+          <img src="images/portfolio/8.jpg" alt="portfolio 8 image" title="portfolio 8 picture" class="img-fluid">
+          <div class="portfolio-info">
+            <div class="caption">
+              <h4>Calculator</h4>
+              <p> calculator is a machine which allows people to do math operations more easily. For example, most calculators will add, subtract, multiply, and divide.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="portfolio-box shadow">
+          <img src="images/portfolio/9.jpg" alt="portfolio 9 image" title="portfolio 9 picture" class="img-fluid">
+          <div class="portfolio-info">
+            <div class="caption">
+              <h4>Toggle Switch</h4>
+              <p>What is the toggle switch?
+                Toggle switches are actuators - devices that switch a machine on or off. They are similar in function to rocker switches, but the latter feature a see-saw shaped button that swings from one position to another and are sometimes classed as a type of rocker switch.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////
+              START SECTION 8 - GET STARTED  
+/////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<section id="contact" class="get-started">
+  <div class="container">
+    <div class="row text-center">
+      <h1 class="display-3 fw-bold text-capitalize">Get started</h1>
+      <div class="heading-line"></div>
+      <p class="lh-lg">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero illum architecto modi.
+      </p>
+    </div>
+
+    <!-- START THE CTA CONTENT  -->
+    <div class="row text-white">
+      <div class="col-12 col-lg-6 gradient shadow p-3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d12668.134943331399!2d72.87457330858898!3d19.271097601133647!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDE1JzUzLjUiTiA3MsKwNTMnMTkuNiJF!5e0!3m2!1sen!2sin!4v1702454895654!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      </div>
+      <div class="col-12 col-lg-6 bg-white shadow p-3">
+        <div class="form w-100 pb-2">
+          <h4 class="display-3--title mb-5">start your project</h4>
+          <form action="#" class="row">
+            <div class="col-lg-6 col-md mb-3">
+              <input type="text" placeholder="First Name" id="inputFirstName" class="shadow form-control form-control-lg">
+            </div>
+            <div class="col-lg-6 col-md mb-3">
+              <input type="text" placeholder="Last Name" id="inputLastName" class="shadow form-control form-control-lg">
+            </div>
+            <div class="col-lg-12 mb-3">
+              <input type="email" placeholder="email address" id="inputEmail" class="shadow form-control form-control-lg">
+            </div>
+            <div class="col-lg-12 mb-3">
+              <textarea name="message" placeholder="message" id="message" rows="8" class="shadow form-control form-control-lg"></textarea>
+            </div>
+            <div class="text-center d-grid mt-1">
+              <button type="button" class="btn btn-primary rounded-pill pt-3 pb-3">
+                submit
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////
+                           START SECTION 9 - THE FOOTER  
+///////////////////////////////////////////////////////////////////////////////////////////////-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <!-- CONTENT FOR THE MOBILE NUMBER  -->
+      <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+        <div class="contact-box__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+            <path d="M15 7a2 2 0 0 1 2 2" />
+            <path d="M15 3a6 6 0 0 1 6 6" />
+          </svg>
+        </div>
+        <div class="contact-box__info">
+          <a href="#" class="contact-box__info--title">+91 9324841811</a>
+          <p class="contact-box__info--subtitle">  Mon-Fri 9am-6pm</p>
+        </div>
+      </div>  
+      <!-- CONTENT FOR EMAIL  -->
+      <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+        <div class="contact-box__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-opened" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <polyline points="3 9 12 15 21 9 12 3 3 9" />
+            <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+            <line x1="3" y1="19" x2="9" y2="13" />
+            <line x1="15" y1="13" x2="21" y2="19" />
+          </svg>
+        </div>
+        <div class="contact-box__info">
+          <a href="#" class="contact-box__info--title">info@company.com</a>
+          <p class="contact-box__info--subtitle">Online support</p>
+        </div>
+      </div>
+      <!-- CONTENT FOR LOCATION  -->
+      <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+        <div class="contact-box__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="18" y1="6" x2="18" y2="6.01" />
+            <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
+            <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
+            <line x1="9" y1="4" x2="9" y2="17" />
+            <line x1="15" y1="15" x2="15" y2="20" />
+          </svg>
+        </div>
+        <div class="contact-box__info">
+          <a href="#" class="contact-box__info--title">Miraroad(E),Maharashtra</a>
+          <p class="contact-box__info--subtitle">401107</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START THE SOCIAL MEDIA CONTENT  -->
+  <div class="footer-sm" style="background-color: #212121;">
+    <div class="container">
+      <div class="row py-4 text-center text-white">
+        <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+          Connect with us on social media
+        </div>
+        <div class="col-lg-7 col-md-6">
+          <a href="https://www.facebook.com/nbrcodingadda"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/nbrcodingadda/"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START THE CONTENT FOR THE CAMPANY INFO -->
+  
+  <!-- START THE COPYRIGHT INFO  -->
+  <div class="footer-bottom pt-5 pb-5">
+    <div class="container">
+      <div class="row text-center text-white">
+        <div class="col-12">
+          <div class="footer-bottom__copyright">
+            &COPY; Copyright 2023 | Created by <a href="#" target="_blank">NBRCODINGADDA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP BUTTON  -->
+<a href="#" class="shadow btn-primary rounded-circle back-to-top">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+
+
+   
+    <script src="assets/vendors/js/glightbox.min.js"></script>
+
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+        'touchNavigation': true,
+        'href': 'https://www.youtube.com/watch?v=J9lS14nM1xg',
+        'type': 'video',
+        'source': 'youtube', //vimeo, youtube or local
+        'width': 900,
+        'autoPlayVideos': 'true',
+});
+    
+    </script>
+     <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
